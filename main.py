@@ -1,7 +1,7 @@
 import pandas as pd
 
-parquet_file = '/home/andrei/Documents/veridion_entity_resolution_challenge.snappy.parquet'
-output_directory = '/home/andrei/Documents/'
+parquet_file = ''
+output_directory = ''
 
 # I first concluded that company names have to be unique for each company,
 # thus a redundant values would mean duplicated company data
