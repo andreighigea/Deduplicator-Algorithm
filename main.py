@@ -3,10 +3,16 @@ import numpy as np
 from difflib import SequenceMatcher
 from pandarallel import pandarallel
 import json
+import os
 
-# File paths for input and output
-parquet_file = ''
-output_directory = ''
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# User only needs to specify the file name
+parquet_file_name = 'duplicated_file.snappy.parquet'
+output_file_name = 'deduplicated_file.snappy.parquet'
+parquet_file = os.path.join(script_dir, parquet_file_name)
+output_directory = script_dir
 
 # Utility functions for fuzzy matching and merging
 
@@ -462,10 +468,8 @@ def locations_to_json(df):
 result_df = locations_to_json(result_df)
 
 result_df.to_parquet(
-    output_directory + 'deduped_output.snappy.parquet',
+    os.path.join(output_directory, output_file_name),
     engine='fastparquet',
     compression='snappy',
     index=False
 )
-
-
