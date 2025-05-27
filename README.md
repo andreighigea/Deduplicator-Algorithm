@@ -1,4 +1,4 @@
-README: Company Data Deduplication and Aggregation Script
+Company Data Deduplication and Aggregation Script
 ========================================================
 
 Overview
